@@ -76,7 +76,9 @@ async function navigateOpenGraphic() {
   const servingUrl = `http://0.0.0.0:${server.address().port}`
 
   // Crawling
-  const browser = await puppeteer.launch({ headless: "new" })
+  const browser = await puppeteer.launch({ executablePath: 'path-to-bundled-chromium' });
+
+  //const browser = await puppeteer.launch({ headless: "new" })
   const page = await browser.newPage()
 
   // Getting - OpenGraph Images
@@ -106,6 +108,5 @@ async function navigateOpenGraphic() {
 
   console.log("Pos-run Generator done")
 }
-const browser = await puppeteer.launch({ executablePath: 'path-to-bundled-chromium' });
 
 navigateOpenGraphic()
