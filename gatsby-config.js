@@ -17,17 +17,19 @@ const pluginsConfig = [
       styles: `${__dirname}/src/styles`,
     },
   },
-  {
-    resolve: `gatsby-plugin-algolia-search`,
-    options: {
-      appId: process.env.GATSBY_ALGOLIA_APP_ID,
-      apiKey: process.env.ALGOLIA_ADMIN_KEY,
-      indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-      queries,
-      chunkSize: 10000, // default: 1000
-      enablePartialUpdates: true,
-    },
-  },
+  /*{
+     resolve: `gatsby-plugin-algolia-search`,
+     options: {
+       appId: process.env.GATSBY_ALGOLIA_APP_ID,
+       apiKey: process.env.ALGOLIA_ADMIN_KEY,
+       indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+       queries,
+       chunkSize: 10000, // default: 1000
+       enablePartialUpdates: true,
+     },
+   },
+   */
+
   // needs to be the first to work with gatsby-remark-images
   {
     resolve: `gatsby-source-filesystem`,
