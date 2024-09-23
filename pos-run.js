@@ -1,7 +1,9 @@
 const puppeteer = require("puppeteer")
 const express = require("express")
+
 const fs = require("fs")
 const http = require("http")
+
 
 async function getImage(servingUrl, page, slug) {
   await page.goto(`${servingUrl}/__generated/${slug}/index.html`, {
@@ -104,5 +106,6 @@ async function navigateOpenGraphic() {
 
   console.log("Pos-run Generator done")
 }
+const browser = await puppeteer.launch({ executablePath: 'path-to-bundled-chromium' });
 
 navigateOpenGraphic()
