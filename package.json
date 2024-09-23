@@ -49,11 +49,17 @@
     "prettier": "^3.0.3",
     "puppeteer": "^21.5.1"
   },
+  
   "build": {
-    "env": {
-      "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
-    }
-  },
+      "commands": [
+        "apt-get update && apt-get install -y libatk1.0-0 libgtk-3-0 libgbm-dev"
+      ],
+      "env": {
+        "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
+      }
+    },
+  
+
   "keywords": [
     "gatsby",
     "develop",
