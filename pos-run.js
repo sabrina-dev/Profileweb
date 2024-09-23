@@ -78,7 +78,7 @@ async function navigateOpenGraphic() {
   // Crawling
 
 
-  const browser = await puppeteer.launch({ headless: "new", executablePath: 'path-to-bundled-chromium' })
+  const browser = await puppeteer.launch({ headless: "new" })
   const page = await browser.newPage()
 
   // Getting - OpenGraph Images
