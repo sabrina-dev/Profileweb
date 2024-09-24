@@ -1,7 +1,9 @@
 const puppeteer = require("puppeteer")
 const express = require("express")
+
 const fs = require("fs")
 const http = require("http")
+
 
 async function getImage(servingUrl, page, slug) {
   await page.goto(`${servingUrl}/__generated/${slug}/index.html`, {
@@ -74,7 +76,12 @@ async function navigateOpenGraphic() {
   const servingUrl = `http://0.0.0.0:${server.address().port}`
 
   // Crawling
-  const browser = await puppeteer.launch({ headless: "new" })
+
+
+  const browser = await puppeteer.launch({
+    headless: false,
+    args: ["--no-sandbox"]
+  })
   const page = await browser.newPage()
 
   // Getting - OpenGraph Images
